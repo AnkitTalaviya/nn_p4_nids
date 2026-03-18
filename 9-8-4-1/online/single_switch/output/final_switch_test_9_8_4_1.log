@@ -1,0 +1,261 @@
+=========================================
+9-8-4-1 DYNAMIC BMV2 RESET AND RUN
+=========================================
+Python:              /home/p4/src/p4dev-python-venv/bin/python3
+Model:               /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/9-8-4-1/offline/python/output/ptq_model_9_8_4_1.json
+P4 source:           /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/dynamic_runtime_template/p4/ids_neuralnet_dynamic_9_32_16_1.p4
+Dataset:             /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/data/UNSW_NB15_testing-set.csv
+Sample count:        1000
+
+--- 0) GENERATE COMMANDS (dynamic two_hidden) ---
+Model: /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/9-8-4-1/offline/python/output/ptq_model_9_8_4_1.json
+Detected architecture: 9-8-4-1
+Profile: two_hidden
+Use P4 program: dynamic_runtime_template/p4/ids_neuralnet_dynamic_9_32_16_1.p4
+Generated 1137 commands: /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/9-8-4-1/online/single_switch/commands.txt
+[dynamic-wrapper] generating single-switch commands with two_hidden profile
+[dynamic-wrapper] model: /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/9-8-4-1/offline/python/output/ptq_model_9_8_4_1.json
+[dynamic-wrapper] output: /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/9-8-4-1/online/single_switch/commands.txt
+--- 1) COMPILE DYNAMIC P4 ---
+--- 2) CLEANUP OLD SWITCH/INTERFACES ---
+--- 3) SETUP VETH INTERFACES ---
+--- 4) START BMV2 SWITCH ---
+Switch PID: 216622
+--- 5) LOAD TABLE/REGISTER COMMANDS ---
+--- 6) RUN BMv2 ACCURACY TEST (9-8-4-1) ---
+========================================================================================
+9-8-4-1 REAL BMv2 ACCURACY TEST
+Dataset rows tested: 1,000
+Features: ['proto', 'sttl', 'dttl', 'swin', 'dwin', 'service', 'state', 'sbytes', 'dbytes']
+Model threshold: 70518
+Switch threshold: 70518
+========================================================================================
+------------------------------------------------------------------------------------------------------------------------------------------------------
+TYPE     | proto    | sttl     | dttl     | swin     | dwin     | service  | state    | sbytes   | dbytes   | RESULT              
+(Label)  | proto    | sttl     | dttl     | swin     | dwin     | service  | state    | sbytes   | dbytes   | (Decision)          
+------------------------------------------------------------------------------------------------------------------------------------------------------
+NORMAL   | 45       | -756     | -293     | 489      | 509      | -345     | -286     | 16       | 1808     | ALLOWED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -6       | -32      | MISSED              
+NORMAL   | 45       | -756     | -293     | 489      | 509      | -345     | -286     | 51       | 3656     | ALLOWED (Correct)   
+NORMAL   | 210      | -756     | -293     | -537     | -515     | 140      | -1050    | -23      | -44      | ALLOWED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | 62       | -42      | MISSED              
+NORMAL   | 45       | -756     | -293     | 489      | 509      | 1841     | -286     | 88       | -33      | ALLOWED (Correct)   
+NORMAL   | 45       | -756     | -293     | 489      | 509      | -345     | -286     | -15      | 67       | ALLOWED (Correct)   
+ATTACK   | -92      | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 238      | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+NORMAL   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -22      | -43      | ALLOWED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -22      | -44      | MISSED              
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+NORMAL   | 210      | -756     | -293     | -537     | -515     | -345     | -1050    | -22      | -44      | ALLOWED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | 39       | -44      | MISSED              
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 869      | -286     | -21      | -30      | BLOCKED (Correct)   
+NORMAL   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -22      | -44      | ALLOWED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | 869      | -286     | -21      | -44      | BLOCKED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 1841     | -286     | 876      | -34      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | -345     | 478      | -21      | -45      | BLOCKED (Correct)   
+ATTACK   | -1438    | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+NORMAL   | 45       | -756     | -293     | 489      | 509      | -345     | -286     | -18      | -36      | ALLOWED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 1841     | -286     | 73       | -39      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -21      | -42      | MISSED              
+NORMAL   | 210      | -756     | -293     | -537     | -515     | -345     | -1050    | -22      | -44      | ALLOWED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+NORMAL   | 210      | -756     | -293     | -537     | -515     | 140      | -1050    | -23      | -44      | ALLOWED (Correct)   
+ATTACK   | 348      | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 1841     | -286     | 1249     | -32      | BLOCKED (Correct)   
+ATTACK   | -2922    | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+NORMAL   | 210      | -756     | -293     | -537     | -515     | 140      | -1050    | -23      | -44      | ALLOWED (Correct)   
+NORMAL   | 210      | 368      | -420     | -537     | -515     | -345     | 478      | -24      | -45      | FALSE ALARM         
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -21      | -42      | MISSED              
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 869      | -286     | -22      | -31      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -21      | -42      | MISSED              
+ATTACK   | -2564    | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | -394     | 368      | -157     | -537     | -515     | -345     | -1050    | -22      | -43      | BLOCKED (Correct)   
+NORMAL   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -22      | -44      | ALLOWED (Correct)   
+ATTACK   | -889     | 368      | -420     | -537     | -515     | -345     | 478      | -21      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+NORMAL   | 210      | 368      | -420     | -537     | -515     | -345     | 478      | -21      | -45      | FALSE ALARM         
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -19      | -44      | MISSED              
+NORMAL   | 45       | -756     | -293     | 489      | 509      | -345     | -286     | -8       | 239      | ALLOWED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+NORMAL   | 45       | -756     | -293     | 489      | 509      | -345     | -286     | -1       | 8        | ALLOWED (Correct)   
+NORMAL   | 210      | -756     | -293     | -537     | -515     | 140      | -1050    | -23      | -44      | ALLOWED (Correct)   
+ATTACK   | 210      | -600     | 686      | -537     | -515     | 140      | -1050    | -23      | -42      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -21      | -42      | MISSED              
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | 869      | -286     | -21      | -44      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -22      | -44      | MISSED              
+NORMAL   | 45       | -756     | -293     | 489      | 509      | -345     | -286     | -12      | -36      | ALLOWED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 238      | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 1355     | -286     | -20      | 84       | BLOCKED (Correct)   
+ATTACK   | 238      | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | -345     | 478      | -22      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | -2235    | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | -889     | 368      | -420     | -537     | -515     | -345     | 478      | 122      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 1355     | -286     | -18      | 611      | BLOCKED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 869      | -286     | -21      | -38      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 1841     | -286     | 69       | -38      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 1841     | -286     | -17      | -39      | BLOCKED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 869      | -286     | -21      | -13      | BLOCKED (Correct)   
+NORMAL   | 45       | -756     | -293     | 489      | 509      | -345     | -286     | -16      | 35       | ALLOWED (Correct)   
+NORMAL   | 210      | -756     | -293     | -537     | -515     | -345     | -1050    | -22      | -44      | ALLOWED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | -345     | 478      | -21      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | -345     | -286     | -21      | -4       | BLOCKED (Correct)   
+NORMAL   | 45       | 368      | -420     | 489      | -515     | -345     | 1241     | -24      | -45      | ALLOWED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | 869      | -286     | -22      | -44      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 2083     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -22      | -44      | MISSED              
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 869      | -286     | -21      | -41      | MISSED              
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | -345     | -286     | -21      | -38      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | 383      | -286     | -22      | -42      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | 1        | -43      | MISSED              
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+NORMAL   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -19      | -44      | ALLOWED (Correct)   
+NORMAL   | 45       | -756     | -293     | 489      | 509      | -345     | -286     | -14      | 87       | ALLOWED (Correct)   
+NORMAL   | 210      | 368      | -420     | -537     | -515     | -345     | 478      | -21      | -45      | FALSE ALARM         
+NORMAL   | 45       | -756     | -293     | 489      | 509      | -345     | -286     | -13      | -36      | ALLOWED (Correct)   
+NORMAL   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -21      | -42      | ALLOWED (Correct)   
+ATTACK   | -2674    | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+NORMAL   | 210      | -756     | -293     | -537     | -515     | 140      | -1050    | -23      | -44      | ALLOWED (Correct)   
+ATTACK   | -559     | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 869      | -286     | -21      | -29      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -20      | -42      | MISSED              
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+NORMAL   | 210      | 368      | -420     | -537     | -515     | -345     | 478      | -21      | -45      | FALSE ALARM         
+NORMAL   | 45       | 368      | 686      | 489      | 509      | 383      | -286     | -21      | -42      | FALSE ALARM         
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | -2867    | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -22      | -44      | MISSED              
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -22      | -44      | MISSED              
+NORMAL   | 210      | -756     | -293     | -537     | -515     | 140      | -1050    | -23      | -44      | ALLOWED (Correct)   
+NORMAL   | 45       | -756     | -293     | 489      | 509      | -345     | -286     | -12      | 130      | ALLOWED (Correct)   
+ATTACK   | -2400    | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+NORMAL   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -22      | -44      | ALLOWED (Correct)   
+ATTACK   | 238      | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 869      | -286     | -17      | 297      | BLOCKED (Correct)   
+NORMAL   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -22      | -44      | ALLOWED (Correct)   
+NORMAL   | 45       | -756     | -293     | 489      | 509      | 869      | -286     | -19      | -10      | ALLOWED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -22      | -44      | MISSED              
+ATTACK   | -1493    | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+NORMAL   | 45       | -756     | -293     | 489      | 509      | 869      | -286     | -19      | -10      | ALLOWED (Correct)   
+NORMAL   | 210      | -756     | -293     | -537     | -515     | 140      | -1050    | -23      | -44      | ALLOWED (Correct)   
+ATTACK   | -202     | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | -345     | -286     | -20      | 198      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | -345     | -286     | -9       | 2658     | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | -779     | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+NORMAL   | -2839    | -913     | -420     | -537     | -515     | -345     | 478      | -24      | -45      | ALLOWED (Correct)   
+NORMAL   | 210      | -756     | -293     | -537     | -515     | 140      | -1050    | -23      | -44      | ALLOWED (Correct)   
+ATTACK   | -2702    | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 1355     | -286     | -21      | -32      | BLOCKED (Correct)   
+ATTACK   | -422     | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+NORMAL   | 45       | -756     | -293     | 489      | 509      | -345     | -286     | -19      | -39      | ALLOWED (Correct)   
+ATTACK   | 210      | 368      | -157     | -537     | -515     | -345     | -1050    | -24      | -44      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+NORMAL   | 210      | 368      | -420     | -537     | -515     | -345     | 478      | -21      | -45      | FALSE ALARM         
+ATTACK   | 238      | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 238      | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 869      | -286     | -21      | -41      | MISSED              
+NORMAL   | 45       | -756     | -293     | 489      | 509      | -345     | -286     | -12      | -36      | ALLOWED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+NORMAL   | 210      | 368      | -420     | -537     | -515     | -345     | 478      | -24      | -45      | FALSE ALARM         
+ATTACK   | 238      | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 238      | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | 869      | -286     | -21      | -44      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | 180      | -43      | MISSED              
+ATTACK   | 18       | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+NORMAL   | 45       | -756     | -293     | 489      | 509      | -345     | -286     | -16      | 35       | ALLOWED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -22      | -44      | MISSED              
+NORMAL   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -21      | -43      | ALLOWED (Correct)   
+ATTACK   | -1246    | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+NORMAL   | 45       | -756     | -293     | 489      | 509      | -345     | -286     | -15      | 58       | ALLOWED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | 869      | -286     | -21      | -44      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+NORMAL   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -16      | -44      | ALLOWED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+NORMAL   | -2839    | -913     | -420     | -537     | -515     | -345     | 478      | -24      | -45      | ALLOWED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | -345     | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 238      | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 238      | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -16      | -44      | MISSED              
+ATTACK   | -10      | -913     | -420     | -537     | -515     | -345     | 478      | -24      | -45      | MISSED              
+ATTACK   | 45       | 368      | 686      | 489      | 509      | 869      | -286     | -21      | -44      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -22      | -44      | MISSED              
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -21      | -42      | MISSED              
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 1841     | -286     | 99       | -38      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | 869      | -286     | -22      | -44      | BLOCKED (Correct)   
+ATTACK   | -394     | 368      | -157     | -537     | -515     | -345     | -1050    | -22      | -43      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 869      | -286     | -4       | 3210     | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -22      | -44      | MISSED              
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 1841     | -286     | -16      | -39      | BLOCKED (Correct)   
+NORMAL   | 45       | -756     | -293     | 489      | 509      | 2326     | -286     | 5        | -3       | ALLOWED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | -889     | 368      | -420     | -537     | -515     | -345     | 1241     | -7       | -45      | BLOCKED (Correct)   
+NORMAL   | 45       | 368      | -420     | 489      | -515     | -345     | 1241     | -23      | -45      | ALLOWED (Correct)   
+ATTACK   | 238      | 368      | -420     | -537     | -515     | -345     | 478      | -23      | -45      | BLOCKED (Correct)   
+NORMAL   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -13      | -44      | ALLOWED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 626      | -286     | -23      | -42      | BLOCKED (Correct)   
+NORMAL   | 210      | -756     | -293     | -537     | -515     | 140      | -1050    | -23      | -44      | ALLOWED (Correct)   
+NORMAL   | 45       | -756     | -293     | 489      | 509      | -345     | -286     | 50       | 3656     | ALLOWED (Correct)   
+ATTACK   | -889     | 368      | -420     | -537     | -515     | -345     | 478      | -18      | -45      | BLOCKED (Correct)   
+NORMAL   | 45       | -756     | -293     | 489      | 509      | -345     | -286     | -10      | -34      | ALLOWED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+ATTACK   | 45       | 368      | 686      | 489      | 509      | -345     | -286     | -22      | -43      | MISSED              
+NORMAL   | 45       | -756     | -293     | 489      | 509      | -345     | -286     | -13      | 124      | ALLOWED (Correct)   
+ATTACK   | 45       | -600     | 686      | 489      | 509      | 1841     | -286     | 1430     | -35      | BLOCKED (Correct)   
+ATTACK   | 210      | 368      | -420     | -537     | -515     | 140      | 478      | -24      | -45      | BLOCKED (Correct)   
+[    200/1000] TP=119 TN=48 FP=7 FN=26
+... live table output suppressed after 200 rows ...
+[    400/1000] TP=227 TN=105 FP=12 FN=56
+[    600/1000] TP=336 TN=166 FP=17 FN=81
+[    800/1000] TP=450 TN=226 FP=21 FN=103
+[   1000/1000] TP=564 TN=288 FP=22 FN=126
+----------------------------------------------------------------------------------------
+Confusion Matrix
+TP=564  FN=126
+FP=22  TN=288
+----------------------------------------------------------------------------------------
+Accuracy : 85.2000%
+Precision: 96.2457%
+Recall   : 81.7391%
+F1-score : 88.4013%
+Runtime: 455.795 s (2.19 rows/s)
+========================================================================================
+Saved detailed CSV: /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/9-8-4-1/online/single_switch/output/final_switch_results_9_8_4_1.csv
+
+=========================================
+DONE
+=========================================
+Accuracy log: /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/9-8-4-1/online/single_switch/output/final_switch_test_9_8_4_1.log
+Accuracy CSV: /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/9-8-4-1/online/single_switch/output/final_switch_results_9_8_4_1.csv
+Stop switch: sudo killall -9 simple_switch

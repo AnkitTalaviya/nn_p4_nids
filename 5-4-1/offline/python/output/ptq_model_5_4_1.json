@@ -1,0 +1,283 @@
+{
+  "model_name": "unsw_nb15_5_4_1_offline",
+  "architecture": {
+    "input": 5,
+    "hidden": [
+      4
+    ],
+    "output": 1
+  },
+  "quantization_scale": 512,
+  "selected_features": [
+    "proto",
+    "sttl",
+    "dttl",
+    "swin",
+    "dwin"
+  ],
+  "feature_mask": 31,
+  "feature_map": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "candidate_features": [
+    "proto",
+    "sttl",
+    "dttl",
+    "swin",
+    "dwin"
+  ],
+  "layer_0": {
+    "weights": [
+      [
+        -28,
+        248,
+        26,
+        -203
+      ],
+      [
+        -410,
+        -351,
+        -568,
+        660
+      ],
+      [
+        -291,
+        412,
+        -446,
+        182
+      ],
+      [
+        649,
+        -109,
+        -140,
+        -638
+      ],
+      [
+        -130,
+        151,
+        73,
+        -381
+      ]
+    ],
+    "biases": [
+      471,
+      -357,
+      -44,
+      110
+    ]
+  },
+  "layer_1": {
+    "weights": [
+      -338,
+      551,
+      -644,
+      315
+    ],
+    "biases": [
+      72301
+    ]
+  },
+  "decision": {
+    "rule": "attack_if_nn_result_gt_threshold",
+    "threshold": -260628
+  },
+  "preprocessing": {
+    "category_mappings": {
+      "proto": {
+        "3pc": 1,
+        "a/n": 2,
+        "aes-sp3-d": 3,
+        "any": 4,
+        "argus": 5,
+        "aris": 6,
+        "arp": 7,
+        "ax.25": 8,
+        "bbn-rcc": 9,
+        "bna": 10,
+        "br-sat-mon": 11,
+        "cbt": 12,
+        "cftp": 13,
+        "chaos": 14,
+        "compaq-peer": 15,
+        "cphb": 16,
+        "cpnx": 17,
+        "crtp": 18,
+        "crudp": 19,
+        "dcn": 20,
+        "ddp": 21,
+        "ddx": 22,
+        "dgp": 23,
+        "egp": 24,
+        "eigrp": 25,
+        "emcon": 26,
+        "encap": 27,
+        "etherip": 28,
+        "fc": 29,
+        "fire": 30,
+        "ggp": 31,
+        "gmtp": 32,
+        "gre": 33,
+        "hmp": 34,
+        "i-nlsp": 35,
+        "iatp": 36,
+        "ib": 37,
+        "idpr": 38,
+        "idpr-cmtp": 39,
+        "idrp": 40,
+        "ifmp": 41,
+        "igmp": 42,
+        "igp": 43,
+        "il": 44,
+        "ip": 45,
+        "ipcomp": 46,
+        "ipcv": 47,
+        "ipip": 48,
+        "iplt": 49,
+        "ipnip": 50,
+        "ippc": 51,
+        "ipv6": 52,
+        "ipv6-frag": 53,
+        "ipv6-no": 54,
+        "ipv6-opts": 55,
+        "ipv6-route": 56,
+        "ipx-n-ip": 57,
+        "irtp": 58,
+        "isis": 59,
+        "iso-ip": 60,
+        "iso-tp4": 61,
+        "kryptolan": 62,
+        "l2tp": 63,
+        "larp": 64,
+        "leaf-1": 65,
+        "leaf-2": 66,
+        "merit-inp": 67,
+        "mfe-nsp": 68,
+        "mhrp": 69,
+        "micp": 70,
+        "mobile": 71,
+        "mtp": 72,
+        "mux": 73,
+        "narp": 74,
+        "netblt": 75,
+        "nsfnet-igp": 76,
+        "nvp": 77,
+        "ospf": 78,
+        "pgm": 79,
+        "pim": 80,
+        "pipe": 81,
+        "pnni": 82,
+        "pri-enc": 83,
+        "prm": 84,
+        "ptp": 85,
+        "pup": 86,
+        "pvp": 87,
+        "qnx": 88,
+        "rdp": 89,
+        "rsvp": 90,
+        "rvd": 91,
+        "sat-expak": 92,
+        "sat-mon": 93,
+        "sccopmce": 94,
+        "scps": 95,
+        "sctp": 96,
+        "sdrp": 97,
+        "secure-vmtp": 98,
+        "sep": 99,
+        "skip": 100,
+        "sm": 101,
+        "smp": 102,
+        "snp": 103,
+        "sprite-rpc": 104,
+        "sps": 105,
+        "srp": 106,
+        "st2": 107,
+        "stp": 108,
+        "sun-nd": 109,
+        "swipe": 110,
+        "tcf": 111,
+        "tcp": 112,
+        "tlsp": 113,
+        "tp++": 114,
+        "trunk-1": 115,
+        "trunk-2": 116,
+        "ttp": 117,
+        "udp": 118,
+        "unas": 119,
+        "uti": 120,
+        "vines": 121,
+        "visa": 122,
+        "vmtp": 123,
+        "vrrp": 124,
+        "wb-expak": 125,
+        "wb-mon": 126,
+        "wsn": 127,
+        "xnet": 128,
+        "xns-idp": 129,
+        "xtp": 130,
+        "zero": 131
+      }
+    },
+    "scaler_mean": [
+      110.34827284652383,
+      180.96766749259098,
+      95.71300344944858,
+      133.45908030899287,
+      128.28662002623525
+    ],
+    "scaler_scale": [
+      18.63716893166141,
+      101.51274101120052,
+      116.66701311494705,
+      127.35622631027006,
+      127.49059580194519
+    ],
+    "train_feature_medians": {
+      "proto": 112.0,
+      "sttl": 254.0,
+      "dttl": 29.0,
+      "swin": 255.0,
+      "dwin": 255.0
+    }
+  },
+  "metrics": {
+    "float": {
+      "accuracy": 0.8238974341426135,
+      "precision": 0.9499964392174417,
+      "recall": 0.782446937766568,
+      "f1": 0.8581195952838251,
+      "tn": 51085,
+      "fp": 4915,
+      "fn": 25963,
+      "tp": 93378
+    },
+    "quantized": {
+      "accuracy": 0.925995631369731,
+      "precision": 0.9045373293271973,
+      "recall": 0.9964303969298062,
+      "f1": 0.948262800730445,
+      "tn": 43450,
+      "fp": 12550,
+      "fn": 426,
+      "tp": 118915
+    },
+    "logit_correlation": 0.9999996995119154,
+    "decision_rule": "attack_if_nn_result_gt_threshold",
+    "threshold_objective": "f_beta",
+    "threshold_beta": 1.0,
+    "threshold_target_precision": null,
+    "val_threshold_precision": 0.7235778862308985,
+    "val_threshold_recall": 0.9974633285540973,
+    "val_threshold_f1": 0.8387276268199945,
+    "val_threshold_accuracy": 0.7887897006133479,
+    "val_threshold_f_beta": 0.8387276268199945,
+    "threshold": -260628,
+    "iterations": 25,
+    "train_samples": 65865,
+    "val_samples": 16467,
+    "test_samples": 175341
+  }
+}

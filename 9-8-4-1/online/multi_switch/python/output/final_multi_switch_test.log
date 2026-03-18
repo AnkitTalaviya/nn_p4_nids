@@ -1,0 +1,111 @@
+=========================================
+DYNAMIC 4-SWITCH BMV2 NN IDS DEPLOYMENT
+=========================================
+Model JSON    : /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/9-8-4-1/offline/python/output/ptq_model_9_8_4_1.json
+Model profile : two_hidden
+N_SWITCHES    : 4
+[1/2] Deploying dynamic multi-switch pipeline
+=========================================
+DYNAMIC N-SWITCH BMV2 NN IDS DEPLOYMENT
+=========================================
+N_SWITCHES      : 4
+MODEL_JSON      : /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/9-8-4-1/offline/python/output/ptq_model_9_8_4_1.json
+MODEL_PROFILE   : two_hidden
+BASE_THRIFT_PORT: 9090
+SKIP_DEPLOY     : no
+=========================================
+[1/7] Generating stage P4 files for profile=two_hidden
+Generated dynamic P4 stages in: /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/dynamic_runtime_template/multi_switch/p4
+Profile: two_hidden
+Two-hidden dynamic template dir: /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/dynamic_runtime_template/multi_switch/templates/two_hidden
+  S1: H1 0..7 and H2 0..3
+  S2: H1 8..15 and H2 4..7
+  S3: H1 16..23 and H2 8..11
+  S4: H1 24..31 and H2 12..15
+Layout manifest: /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/dynamic_runtime_template/multi_switch/p4/switch_layout.json
+[2/7] Compiling stage programs
+[3/7] Generating CLI commands
+Model: /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/9-8-4-1/offline/python/output/ptq_model_9_8_4_1.json
+Detected architecture: 9-8-4-1
+Profile: two_hidden, switches=4
+Use P4 programs:
+  dynamic_runtime_template/multi_switch/p4/ids_nn_dynamic_s1.p4
+  dynamic_runtime_template/multi_switch/p4/ids_nn_dynamic_s2.p4
+  dynamic_runtime_template/multi_switch/p4/ids_nn_dynamic_s3.p4
+  dynamic_runtime_template/multi_switch/p4/ids_nn_dynamic_s4.p4
+Stage layout:
+  distribution_mode=low_neuron_partial_accumulate
+  S1: H1 0..7 (active=2) and H2 0..3 (active=4)
+  S2: H1 8..15 (active=2) and H2 4..7 (active=4)
+  S3: H1 16..23 (active=2) and H2 8..11 (active=4)
+  S4: H1 24..31 (active=2) and H2 12..15 (active=4)
+Generated 1064 commands: /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/dynamic_runtime_template/multi_switch/commands_s1.txt
+Generated 28 commands: /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/dynamic_runtime_template/multi_switch/commands_s2.txt
+Generated 28 commands: /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/dynamic_runtime_template/multi_switch/commands_s3.txt
+Generated 31 commands: /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/dynamic_runtime_template/multi_switch/commands_s4.txt
+[4/7] Cleaning old processes/interfaces
+=========================================
+DYNAMIC N-SWITCH CLEANUP
+=========================================
+N_SWITCHES      : 4
+KILL_ALL_SWITCH : yes
+REMOVE_ALL_IPC  : yes
+=========================================
+[1/3] Stopping BMv2 processes
+[2/3] Removing BMv2 IPC files
+[3/3] Removing topology interfaces
+=========================================
+DONE: cleanup complete
+=========================================
+[5/7] Building linear topology
+[6/7] Starting 4 BMv2 switches
+Calling target program-options parser
+Adding interface veth_s4l as port 0
+Adding interface veth_s4r as port 1
+Calling target program-options parser
+Adding interface veth_s2l as port 0
+Adding interface veth_s2r as port 1
+Calling target program-options parser
+Adding interface veth_s3l as port 0
+Adding interface veth_s3r as port 1
+Calling target program-options parser
+Adding interface veth_s1l as port 0
+Adding interface veth_s1r as port 1
+[7/7] Loading tables/registers
+=========================================
+DONE: N-switch deployment complete
+  - Profile      : two_hidden
+  - Switches     : 4
+  - Thrift ports : 9090..9093
+  - Model        : /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/9-8-4-1/offline/python/output/ptq_model_9_8_4_1.json
+=========================================
+[2/2] Running final multi-switch accuracy test
+========================================================================================
+9-8-4-1 MULTI-SWITCH REAL BMv2 ACCURACY TEST
+Dataset rows tested: 1,000
+Features: ['proto', 'sttl', 'dttl', 'swin', 'dwin', 'service', 'state', 'sbytes', 'dbytes']
+Model threshold: 70518
+Switch threshold: 70518
+========================================================================================
+[    200/1000] TP=119 TN=48 FP=7 FN=26
+[    400/1000] TP=227 TN=105 FP=12 FN=56
+[    600/1000] TP=336 TN=166 FP=17 FN=81
+[    800/1000] TP=450 TN=226 FP=21 FN=103
+[   1000/1000] TP=564 TN=288 FP=22 FN=126
+----------------------------------------------------------------------------------------
+Confusion Matrix
+TP=564  FN=126
+FP=22  TN=288
+----------------------------------------------------------------------------------------
+Accuracy : 85.2000%
+Precision: 96.2457%
+Recall   : 81.7391%
+F1-score : 88.4013%
+Runtime: 144.347 s (6.93 rows/s)
+========================================================================================
+Saved detailed CSV: /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/9-8-4-1/online/multi_switch/python/output/final_multi_switch_results.csv
+=========================================
+DONE: dynamic multi-switch deployment
+=========================================
+Accuracy log: /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/9-8-4-1/online/multi_switch/python/output/final_multi_switch_test.log
+Accuracy CSV: /media/sf_Research_Project/P4_nn_nids/submission/eyes-p4-nids/9-8-4-1/online/multi_switch/python/output/final_multi_switch_results.csv

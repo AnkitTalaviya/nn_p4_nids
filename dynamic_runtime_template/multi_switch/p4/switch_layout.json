@@ -1,0 +1,41 @@
+{
+  "profile": "two_hidden",
+  "num_switches": 4,
+  "h1_stage_ranges": [
+    [
+      0,
+      7
+    ],
+    [
+      8,
+      15
+    ],
+    [
+      16,
+      23
+    ],
+    [
+      24,
+      31
+    ]
+  ],
+  "h2_stage_ranges": [
+    [
+      0,
+      3
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      8,
+      11
+    ],
+    [
+      12,
+      15
+    ]
+  ],
+  "notes": "Same 4-switch distribution as the current 9_32_16_1 multi-switch design"
+}

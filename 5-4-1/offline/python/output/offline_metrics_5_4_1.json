@@ -1,0 +1,37 @@
+{
+  "float": {
+    "accuracy": 0.8238974341426135,
+    "precision": 0.9499964392174417,
+    "recall": 0.782446937766568,
+    "f1": 0.8581195952838251,
+    "tn": 51085,
+    "fp": 4915,
+    "fn": 25963,
+    "tp": 93378
+  },
+  "quantized": {
+    "accuracy": 0.925995631369731,
+    "precision": 0.9045373293271973,
+    "recall": 0.9964303969298062,
+    "f1": 0.948262800730445,
+    "tn": 43450,
+    "fp": 12550,
+    "fn": 426,
+    "tp": 118915
+  },
+  "logit_correlation": 0.9999996995119154,
+  "decision_rule": "attack_if_nn_result_gt_threshold",
+  "threshold_objective": "f_beta",
+  "threshold_beta": 1.0,
+  "threshold_target_precision": null,
+  "val_threshold_precision": 0.7235778862308985,
+  "val_threshold_recall": 0.9974633285540973,
+  "val_threshold_f1": 0.8387276268199945,
+  "val_threshold_accuracy": 0.7887897006133479,
+  "val_threshold_f_beta": 0.8387276268199945,
+  "threshold": -260628,
+  "iterations": 25,
+  "train_samples": 65865,
+  "val_samples": 16467,
+  "test_samples": 175341
+}

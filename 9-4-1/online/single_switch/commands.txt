@@ -1,0 +1,78 @@
+table_set_default MyIngress.neuron0_bias MyIngress.set_bias_0 0xffffffdb
+table_set_default MyIngress.neuron0_weights MyIngress.compute_neuron_0 0xffcb 0xfed1 0xff2f 0x01b6 0xff38 0x00b5 0x011a 0xffc6 0xfe46
+table_set_default MyIngress.neuron1_bias MyIngress.set_bias_1 0xfffffff2
+table_set_default MyIngress.neuron1_weights MyIngress.compute_neuron_1 0x02d6 0xfddf 0x02a1 0xfec2 0x0019 0x00a2 0x0232 0x007f 0x01b9
+table_set_default MyIngress.neuron2_bias MyIngress.set_bias_2 0x0000004f
+table_set_default MyIngress.neuron2_weights MyIngress.compute_neuron_2 0x0058 0xfe64 0xfe16 0xff65 0x0014 0xff1a 0xfed6 0xffeb 0x0114
+table_set_default MyIngress.neuron3_bias MyIngress.set_bias_3 0x000000a5
+table_set_default MyIngress.neuron3_weights MyIngress.compute_neuron_3 0xff57 0x01ac 0x0102 0xfe6d 0xfee4 0x019b 0x002f 0xfeaa 0x0089
+table_set_default MyIngress.neuron4_bias MyIngress.set_bias_4 0x00000000
+table_set_default MyIngress.neuron4_weights MyIngress.compute_neuron_4 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron5_bias MyIngress.set_bias_5 0x00000000
+table_set_default MyIngress.neuron5_weights MyIngress.compute_neuron_5 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron6_bias MyIngress.set_bias_6 0x00000000
+table_set_default MyIngress.neuron6_weights MyIngress.compute_neuron_6 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron7_bias MyIngress.set_bias_7 0x00000000
+table_set_default MyIngress.neuron7_weights MyIngress.compute_neuron_7 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron8_bias MyIngress.set_bias_8 0x00000000
+table_set_default MyIngress.neuron8_weights MyIngress.compute_neuron_8 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron9_bias MyIngress.set_bias_9 0x00000000
+table_set_default MyIngress.neuron9_weights MyIngress.compute_neuron_9 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron10_bias MyIngress.set_bias_10 0x00000000
+table_set_default MyIngress.neuron10_weights MyIngress.compute_neuron_10 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron11_bias MyIngress.set_bias_11 0x00000000
+table_set_default MyIngress.neuron11_weights MyIngress.compute_neuron_11 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron12_bias MyIngress.set_bias_12 0x00000000
+table_set_default MyIngress.neuron12_weights MyIngress.compute_neuron_12 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron13_bias MyIngress.set_bias_13 0x00000000
+table_set_default MyIngress.neuron13_weights MyIngress.compute_neuron_13 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron14_bias MyIngress.set_bias_14 0x00000000
+table_set_default MyIngress.neuron14_weights MyIngress.compute_neuron_14 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron15_bias MyIngress.set_bias_15 0x00000000
+table_set_default MyIngress.neuron15_weights MyIngress.compute_neuron_15 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron16_bias MyIngress.set_bias_16 0x00000000
+table_set_default MyIngress.neuron16_weights MyIngress.compute_neuron_16 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron17_bias MyIngress.set_bias_17 0x00000000
+table_set_default MyIngress.neuron17_weights MyIngress.compute_neuron_17 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron18_bias MyIngress.set_bias_18 0x00000000
+table_set_default MyIngress.neuron18_weights MyIngress.compute_neuron_18 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron19_bias MyIngress.set_bias_19 0x00000000
+table_set_default MyIngress.neuron19_weights MyIngress.compute_neuron_19 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron20_bias MyIngress.set_bias_20 0x00000000
+table_set_default MyIngress.neuron20_weights MyIngress.compute_neuron_20 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron21_bias MyIngress.set_bias_21 0x00000000
+table_set_default MyIngress.neuron21_weights MyIngress.compute_neuron_21 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron22_bias MyIngress.set_bias_22 0x00000000
+table_set_default MyIngress.neuron22_weights MyIngress.compute_neuron_22 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron23_bias MyIngress.set_bias_23 0x00000000
+table_set_default MyIngress.neuron23_weights MyIngress.compute_neuron_23 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron24_bias MyIngress.set_bias_24 0x00000000
+table_set_default MyIngress.neuron24_weights MyIngress.compute_neuron_24 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron25_bias MyIngress.set_bias_25 0x00000000
+table_set_default MyIngress.neuron25_weights MyIngress.compute_neuron_25 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron26_bias MyIngress.set_bias_26 0x00000000
+table_set_default MyIngress.neuron26_weights MyIngress.compute_neuron_26 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron27_bias MyIngress.set_bias_27 0x00000000
+table_set_default MyIngress.neuron27_weights MyIngress.compute_neuron_27 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron28_bias MyIngress.set_bias_28 0x00000000
+table_set_default MyIngress.neuron28_weights MyIngress.compute_neuron_28 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron29_bias MyIngress.set_bias_29 0x00000000
+table_set_default MyIngress.neuron29_weights MyIngress.compute_neuron_29 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron30_bias MyIngress.set_bias_30 0x00000000
+table_set_default MyIngress.neuron30_weights MyIngress.compute_neuron_30 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.neuron31_bias MyIngress.set_bias_31 0x00000000
+table_set_default MyIngress.neuron31_weights MyIngress.compute_neuron_31 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+table_set_default MyIngress.output_bias MyIngress.set_output_bias 0xfffee1bf
+table_set_default MyIngress.output_weights MyIngress.compute_output 0xfd13 0x01a2 0xfd10 0x02fc 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000
+register_write MyIngress.active_hidden_count_reg 0 4
+register_write MyIngress.threshold_reg 0 113648
+register_write MyIngress.feature_mask_reg 0 511
+register_write MyIngress.feature_map_reg 0 0
+register_write MyIngress.feature_map_reg 1 1
+register_write MyIngress.feature_map_reg 2 2
+register_write MyIngress.feature_map_reg 3 3
+register_write MyIngress.feature_map_reg 4 4
+register_write MyIngress.feature_map_reg 5 5
+register_write MyIngress.feature_map_reg 6 6
+register_write MyIngress.feature_map_reg 7 7
+register_write MyIngress.feature_map_reg 8 8

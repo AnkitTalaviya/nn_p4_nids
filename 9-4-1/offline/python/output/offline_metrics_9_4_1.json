@@ -1,0 +1,29 @@
+{
+  "float": {
+    "accuracy": 0.8695342218876361,
+    "precision": 0.957288456980327,
+    "recall": 0.8460629624353743,
+    "f1": 0.8982456764643086,
+    "tn": 51495,
+    "fp": 4505,
+    "fn": 18371,
+    "tp": 100970
+  },
+  "quantized": {
+    "accuracy": 0.8602950821542024,
+    "precision": 0.9664034147348958,
+    "recall": 0.8233633034749164,
+    "f1": 0.889167398130469,
+    "tn": 52584,
+    "fp": 3416,
+    "fn": 21080,
+    "tp": 98261
+  },
+  "logit_correlation": 0.9999125298498237,
+  "decision_rule": "attack_if_nn_result_gt_threshold",
+  "threshold": 113648,
+  "iterations": 29,
+  "train_samples": 65865,
+  "val_samples": 16467,
+  "test_samples": 175341
+}
